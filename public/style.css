@@ -1,0 +1,87 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Header */
+h1 {
+    color: #333;
+}
+
+/* Input Fields & Select */
+input, select, button {
+    padding: 10px;
+    margin: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Button Styles */
+button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Chat Messages */
+#messages {
+    list-style-type: none;
+    padding: 0;
+    max-width: 500px;
+    margin: 20px auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+#messages li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+#messages li:last-child {
+    border-bottom: none;
+}
+
+/* Message Input Form */
+#message-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#message-input {
+    width: 70%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#message-form button {
+    width: 20%;
+}
+
+/* Admin Section */
+h2 {
+    color: #444;
+    margin-top: 30px;
+}
+
+#admin-message {
+    background-color: #ff4500;
+}
+
+#admin-message:hover {
+    background-color: #cc3700;
+}

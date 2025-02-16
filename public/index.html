@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script defer src="index.js"></script>
+</head>
+<body>
+    <h1>Chat Application</h1>
+
+    <div>
+        <label>Enter your name: </label>
+        <input type="text" id="name-input" placeholder="Your name">
+    </div>
+
+    <div>
+        <label>Select Room:</label>
+        <select id="room-select">
+            <option value="general">General</option>
+            <option value="sports">Sports</option>
+            <option value="tech">Tech</option>
+        </select>
+        <button id="join-room">Join Room</button>
+    </div>
+
+    <ul id="messages"></ul>
+
+    <form id="message-form">
+        <input id="message-input" autocomplete="off">
+        <button type="submit">Send</button>
+    </form>
+
+    <h2>Admin Section</h2>
+    <input type="text" id="admin-input" class="admin-input" placeholder="Enter Admin Message">
+    <button id="admin-message">Send Admin Msg</button>
+</body>
+</html>
