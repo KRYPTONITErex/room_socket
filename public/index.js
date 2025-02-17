@@ -26,7 +26,7 @@ joinRoomBtn.addEventListener("click", () => {
 
 socket.on("chat-message", (data) => {
     const li = document.createElement("li");
-    li.textContent = `${data.name}: ${data.message}`;
+    li.innerHTML = `<strong style="color: #005a51">${data.name}:</strong> <i> ${data.message}</i>`;
     messages.appendChild(li);
 });
 
@@ -48,4 +48,7 @@ adminMessageBtn.addEventListener("click", () => {
 
 adminSocket.on("adminMessage", (msg) => {
     console.log("Admin says:", msg);
+    const li = document.createElement("li");
+    li.innerHTML = `<strong style="color: red">ADMIN:</strong> ${msg}`;
+    messages.appendChild(li);
 });
