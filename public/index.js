@@ -1,5 +1,5 @@
 const socket = io("/chat");  // Connect to /chat namespace
-const adminSocket = io("/admin"); // Connect to /admin namespace
+const adminSocket = io("/adminUsers"); // Connect to /admin namespace
 
 const nameInput = document.getElementById("name-input");
 const roomSelect = document.getElementById("room-select");
