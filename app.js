@@ -1,19 +1,20 @@
+const socket = require("socket.io");
+
 const express = require("express");
-const http = require("http");
-const socketIo = require("socket.io");
-
 const app = express();
-const server = http.createServer(app);
-// const io = socketIo(server);
 
-const io = socketIo(server, {
+app.use(express.static("public"));
+
+const server = app.listen(5100, () => {
+    console.log("Server running on localhost:5100");
+});
+
+const io = socket(server, {
     cors: {
       origin: ["http://localhost:5100" , "https://admin.socket.io"],
       credentials: true
     }
   });
-
-app.use(express.static("public")); // Serve static files from the 'public' folder
 
 // Chat namespace
 const chatNamespace = io.of("/chat");
@@ -54,12 +55,6 @@ adminNamespace.on("connection", (socket) => {
     });
 });
 
-// Start server
-const PORT = process.env.PORT || 5100;
-server.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
-});
-
 
 //setup admin ui
 const { instrument } = require("@socket.io/admin-ui");
@@ -67,5 +62,4 @@ const { instrument } = require("@socket.io/admin-ui");
 instrument(io, {
     auth: false,
     mode: "development",
-
 });
