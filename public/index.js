@@ -24,12 +24,6 @@ joinRoomBtn.addEventListener("click", () => {
     currentRoom = room;
 });
 
-socket.on("chat-message", (data) => {
-    const li = document.createElement("li");
-    li.innerHTML = `<strong style="color: #005a51">${data.name}:</strong> <i> ${data.message}</i>`;
-    messages.appendChild(li);
-});
-
 // Send message
 messageForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -39,6 +33,13 @@ messageForm.addEventListener("submit", (e) => {
     socket.emit("message", { room: currentRoom, message });
     messageInput.value = "";
 });
+
+socket.on("chat-message", (data) => {
+    const li = document.createElement("li");
+    li.innerHTML = `<strong style="color: #005a51">${data.name}:</strong> <i> ${data.message}</i>`;
+    messages.appendChild(li);
+});
+
 
 // Admin section
 adminMessageBtn.addEventListener("click", () => {
